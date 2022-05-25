@@ -1,0 +1,199 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Account</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- jQuery.js v1.11.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/jquery.easings.min.jss"></script>
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
+
+    <!-- fullPage.js v2.9.5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.css" rel="stylesheet"  />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Grape+Nuts&family=Hurricane&family=Indie+Flower&family=Inspiration&family=Josefin+Sans:wght@400;500&family=Merienda:wght@700&family=Noto+Sans+TC:wght@100;500&family=Noto+Serif+TC:wght@600&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(rgba(150, 150, 150, 0.5),rgba(150, 150, 150, 0.5)),url(https://picsum.photos/600/300?random=8);
+            background-size:100vw 100vh ;
+            background-repeat: no-repeat;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- TODO: 做component切換登入跟註冊 [Jessie 2022/05/25 15:30] -->
+      <section id="top" class="second">
+        <nav class="navbar navbar-expand-lg fixed-top" id="nav">
+          <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">dyson</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-icon"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link link-light" aria-current="page" href="#">首頁</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-light" href="./products.html">吸塵器</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-light" href="#">空氣清淨機</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-light" href="#">吹風機</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <a class="m-3"><i class="fa-regular fa-circle-question"></i></a>
+                <a class="m-3" href="#"><i class="fa-solid fa-user-large"></i></a>
+                <a class="m-3" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <div class="login container p-5 col-sm-6">
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="accountInput">帳號</label>
+              <input
+                class="form-control"
+                type="text"
+                id="accountInput"
+                name="Account"
+                placeholder="輸入帳號"
+                required
+              />
+              <div class="invalid-feedback">請輸入帳號。</div>
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput">密碼</label>
+              <input
+                class="form-control"
+                type="password"
+                id="passwordInput"
+                name="Passowrd"
+                placeholder="輸入密碼"
+                required
+              />
+              <div class="invalid-feedback">請輸入密碼。</div>
+            </div>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="rememberMeCheckbox"
+                name="RememberMe"
+              />
+              <label class="form-check-label" for="rememberMeCheckbox"
+                >記住我的帳號</label
+              >
+              <!-- 步驟2 參考文件製作 icon-button(用於觸發顯示彈窗)-->
+              <i
+                class="text-primary bi bi-info-circle"
+                id="rememberMeInfoBtn"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style="cursor: pointer"
+              ></i>
+            </div>
+            <button type="submit" class="btn btn-light">Login</button>
+          </form>
+        </div>
+    
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">小提示</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                記憶您輸入的帳號，讓您更快速地<s>衝動購物</s>登入。
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-primary mx-auto"
+                  data-bs-dismiss="modal"
+                >
+                  賀啦!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </section>
+    <footer>
+      <div class="container">
+          <div class="text-center">
+            <span class="logo"><a href="#top">dyson</a></span>
+          </div> 
+           <div class="text-center mt-3">
+            <span class="footer-icon"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></span>
+            <span class="footer-icon"><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+            <span class="footer-icon"><a href="#"><i class="fa-brands fa-pinterest"></i></a></span>
+          </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

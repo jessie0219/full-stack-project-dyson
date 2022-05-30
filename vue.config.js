@@ -4,6 +4,6 @@ module.exports = defineConfig({
 })
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/JessieShop-vue_cli/'
+    ? '/jessieshop-vue/'
     : '/'
 }
